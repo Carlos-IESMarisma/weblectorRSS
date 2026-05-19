@@ -3,16 +3,15 @@ function cargarFeed() {
   if (!url) { alert("Introduce o selecciona una URL de feed RSS."); return; }
 
   // Proxy CORS para saltarse las restricciones del navegador
-  const proxy = "https://api.allorigins.win/get?url=" + encodeURIComponent(url);
+ const proxy = "https://corsproxy.io/?" + encodeURIComponent(url);
 
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     if (this.status !== 200) { mostrarError("Error al cargar el feed."); return; }
 
-    const data   = JSON.parse(this.responseText); // allorigins devuelve JSON
     const parser = new DOMParser();
-    const xml    = parser.parseFromString(data.contents, "text/xml");
-
+const xml = parser.parseFromString(this.responseText, "text/xml");
+    
     // Extraer información del canal
     const canal  = xml.querySelector("channel");
     const titulo = canal.querySelector("title")?.textContent || "";
