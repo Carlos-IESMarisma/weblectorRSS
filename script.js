@@ -19,7 +19,7 @@ function cargarFeed() {
 
     if (!canal) {
       console.error("XML inválido o bloqueado");
-      console.log(this.responseText); // 🔥 esto te ayuda a ver qué llega
+      console.log(this.responseText);
       return;
     }
 
