@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lector RSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>📰 Lector RSS</h1>
+    <p>Introduce una URL de un feed RSS para ver sus noticias</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input type="text" id="customUrl" placeholder="Ej: https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada">
+      <button onclick="cargarFeed()">Cargar Feed</button>
+    </div>
+
+    <div id="feed-container" class="feed"></div>
+  </main>
+
+  <footer>
+    <p>Ejercicio AJAX RSS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
