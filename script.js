@@ -49,3 +49,8 @@ function cargarFeed() {
   xhttp.open("GET", proxy);
   xhttp.send();
 }
+function limpiarHTML(html) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  return div.textContent || div.innerText || "";
+}
